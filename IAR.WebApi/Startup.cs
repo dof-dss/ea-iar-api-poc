@@ -44,7 +44,7 @@ namespace IAR.WebApi
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             // Set up DB connection string
-            services.AddDbContext<IARContext>(options => options.UseMySql(Configuration));
+            services.AddDbContext<IARContext>(options => options.UseMySql(Configuration, "iarMySqlDb"));
             //services.AddCloudFoundryActuators(Configuration);
 
             services.AddScoped<IUnitOfWorkAsync, UnitOfWorkAsync>();

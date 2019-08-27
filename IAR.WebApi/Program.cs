@@ -27,8 +27,7 @@ namespace IAR.WebApi
                 configBuilder.SetBasePath(env.ContentRootPath)
                     .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                     .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
-                    .AddEnvironmentVariables()
-                    // Add to configuration the Cloudfoundry VCAP settings
+                    .AddEnvironmentVariables()                    
                     .AddCloudFoundry();
             })
             .ConfigureLogging((context, builder) =>
