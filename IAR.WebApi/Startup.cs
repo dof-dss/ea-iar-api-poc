@@ -20,7 +20,9 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
-
+using Steeltoe.CloudFoundry.Connector.MySql;
+using Steeltoe.CloudFoundry.Connector.MySql.EFCore;
+using Steeltoe.Management.CloudFoundry;
 
 namespace IAR.WebApi
 {
@@ -42,11 +44,9 @@ namespace IAR.WebApi
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             // Set up DB connection string
-            services.AddDbContext<IARContext>(options =>
-            {
-                options.UseMySQL("server=localhost;port=3306;database=iar;uid=root;password=Code$harkN|101");                
-            });
-            
+            services.AddDbContext<IARContext>(options => options.UseMySql(Configuration));
+            //services.AddCloudFoundryActuators(Configuration);
+
             services.AddScoped<IUnitOfWorkAsync, UnitOfWorkAsync>();
 
             // Register the Swagger generator, defining 1 or more Swagger documents
@@ -95,6 +95,7 @@ namespace IAR.WebApi
             });
 
             app.UseStaticFiles();
+            //app.UseCloudFoundryActuators();
             app.UseMvc();
         }
     }
