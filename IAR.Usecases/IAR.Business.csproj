@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -9,13 +9,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="DSS.Architecture.Patterns.DotNet.Clean">
-      <HintPath>..\..\DSS.Architecture.Patterns\DSS.Architecture.Patterns.DotNet.Clean\bin\Debug\netstandard2.0\DSS.Architecture.Patterns.DotNet.Clean.dll</HintPath>
-    </Reference>
+    <Folder Include="DeleteInformationAsset\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DeleteInformationAsset\" />
+    <PackageReference Include="DSS.Architecture.Patterns.DotNet.Clean" Version="1.0.6" />
   </ItemGroup>
 
 </Project>

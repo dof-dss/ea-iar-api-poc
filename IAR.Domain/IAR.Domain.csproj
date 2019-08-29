@@ -1,13 +1,14 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="DSS.Architecture.Patterns.DotNet.Clean">
-      <HintPath>..\..\DSS.Architecture.Patterns\DSS.Architecture.Patterns.DotNet.Clean\bin\Debug\netstandard2.0\DSS.Architecture.Patterns.DotNet.Clean.dll</HintPath>
-    </Reference>
+    <PackageReference Include="DSS.Architecture.Patterns.DotNet.Clean" Version="1.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="System.ComponentModel.Annotations">
       <HintPath>..\..\..\..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.netcore.app\2.2.0\ref\netcoreapp2.2\System.ComponentModel.Annotations.dll</HintPath>
     </Reference>

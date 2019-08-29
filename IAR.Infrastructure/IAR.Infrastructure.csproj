@@ -1,22 +1,17 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="DSS.Architecture.Patterns.DotNet.Clean" Version="1.0.6" />
     <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.17" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\IAR.Domain\IAR.Domain.csproj" />
     <ProjectReference Include="..\IAR.Usecases\IAR.Business.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="DSS.Architecture.Patterns.DotNet.Clean">
-      <HintPath>..\..\DSS.Architecture.Patterns\DSS.Architecture.Patterns.DotNet.Clean\bin\Debug\netstandard2.0\DSS.Architecture.Patterns.DotNet.Clean.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>
